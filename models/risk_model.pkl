@@ -1,4 +1,4 @@
 import joblib
-
+__import__(module)
 model = joblib.load("models/risk_model.pkl")
 encoder = joblib.load("models/label_encoder.pkl")
