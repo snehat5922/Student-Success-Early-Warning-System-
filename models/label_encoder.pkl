@@ -1,0 +1,23 @@
+import pandas as pd
+import joblib
+from sklearn.preprocessing import LabelEncoder
+
+# Load dataset
+df = pd.read_csv("data/student_data.csv")
+
+# Target column
+y = df["Risk"]
+
+# Create encoder
+encoder = LabelEncoder()
+
+# Fit encoder
+encoder.fit(y)
+
+# Save encoder
+joblib.dump(
+    encoder,
+    "models/label_encoder.pkl"
+)
+
+print("label_encoder.pkl created successfully")
